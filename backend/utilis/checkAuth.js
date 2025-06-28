@@ -15,5 +15,9 @@ export default (req, res, next) =>{
                 message:"отказано"
             })
         }
+    }else{
+        res.status(400).json({
+                message:"отказано"
+            })
     }
 }

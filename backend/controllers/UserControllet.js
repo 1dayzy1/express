@@ -11,7 +11,7 @@ export const login =  async(req, res)=>{
 
     if(!user){
         return res.status(404).json({
-             message:"Not found"
+            message:"Not found"
         })
            
         
@@ -19,6 +19,7 @@ export const login =  async(req, res)=>{
 
     const isValidPass = await bcrypt.compare(req.body.password, user._doc.passwordHash);
 
+    
     if(!isValidPass){
         return res.status(404).json({
              message:"Not found pass"
